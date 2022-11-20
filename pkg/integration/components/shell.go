@@ -116,3 +116,23 @@ func (s *Shell) StashWithMessage(message string) *Shell {
 	s.RunCommand(fmt.Sprintf(`git stash -m "%s"`, message))
 	return s
 }
+
+func (s *Shell) HardReset(ref string) *Shell {
+	return s.RunCommand(fmt.Sprintf("git reset --hard %s", ref))
+}
+
+func (s *Shell) AddRemote(name string, url string) *Shell {
+	return s.RunCommand(fmt.Sprintf("git remote add %s %s", name, url))
+}
+
+func (s *Shell) Fetch(remote string) *Shell {
+	return s.RunCommand(fmt.Sprintf("git fetch %s", remote))
+}
+
+func (s *Shell) SetUpstream(branch string, remoteBranch string) *Shell {
+	return s.RunCommand(fmt.Sprintf("git branch --set-upstream-to=%s %s", remoteBranch, branch))
+}
+
+func (s *Shell) SetLocalConfig(key string, value string) *Shell {
+	return s.RunCommand(fmt.Sprintf(`git config --local %s "%s"`, key, value))
+}

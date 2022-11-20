@@ -16,6 +16,7 @@ import (
 	"github.com/jesseduffield/lazygit/pkg/integration/tests/commit"
 	"github.com/jesseduffield/lazygit/pkg/integration/tests/custom_commands"
 	"github.com/jesseduffield/lazygit/pkg/integration/tests/interactive_rebase"
+	"github.com/jesseduffield/lazygit/pkg/integration/tests/pull"
 	"github.com/jesseduffield/lazygit/pkg/integration/tests/stash"
 )
 
@@ -40,6 +41,7 @@ var tests = []*components.IntegrationTest{
 	cherry_pick.CherryPickConflicts,
 	custom_commands.FormPrompts,
 	stash.Rename,
+	pull.SSHWithU2FAuthenticator,
 }
 
 func GetTests() []*components.IntegrationTest {

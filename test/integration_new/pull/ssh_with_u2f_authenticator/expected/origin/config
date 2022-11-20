@@ -1,0 +1,6 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = /home/dachb/Documents/opensource/lazygit/test/integration_new/pull/ssh_with_u2f_authenticator/actual/repo/.
